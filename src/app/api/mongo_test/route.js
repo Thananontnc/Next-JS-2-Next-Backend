@@ -13,7 +13,7 @@ export async function GET() {
     try {
         const client = await getClientPromise();
         const db = client.db("sample_mflix");
-        const result = await db.collection("movies").find({}).limit(20).toArray();
+        const result = await db.collection("comments").find({}).skip(0).limit(10).toArray();
         console.log("==> result", result);
         return NextResponse.json(result, {
             headers: corsHeaders
