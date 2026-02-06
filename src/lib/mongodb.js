@@ -2,7 +2,9 @@
 import { MongoClient } from "mongodb";
 
 const uri = process.env.MONGODB_URI;
-const options = {};
+const options = {
+    serverSelectionTimeoutMS: 5000, // Fail fast after 5 seconds instead of 30
+};
 
 let client;
 let clientPromise;
