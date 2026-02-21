@@ -13,6 +13,8 @@ RUN npm install
 COPY . .
 
 # Build the Next.js application
+ENV MONGODB_URI="mongodb://dummy"
+ENV JWT_SECRET="dummy"
 RUN npm run build
 
 # Expose port (ensure it matches your Next.js config)
